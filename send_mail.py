@@ -92,7 +92,6 @@ def record_and_send(sender_address, recip_address, subject, mail_content,
 
 
 if __name__ == '__main__':
-    sender_pass_ = getpass.getpass(prompt='insert you password:')
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('sender_address',
                         help='Sender`s address', type=str)
@@ -122,6 +121,7 @@ if __name__ == '__main__':
                         type=int)
 
     args = parser.parse_args()
+    sender_pass_ = getpass.getpass(prompt='insert you password:')
     record_and_send(args.sender_address, args.recip_address, args.subject, args.mail_content,
                     args.smtp_server, sender_pass_, args.video_length, args.interval_between_two_recordings,
                     args.count_of_cycles,
